@@ -23,8 +23,11 @@ export const APP_MANIFEST = {
   name: APP_NAME,
   homeUrl: APP_URL,
   iconUrl: `${APP_URL}/icon.png`,
+  imageUrl: `${APP_URL}/opengraph-image`,
+  buttonTitle: "Open mini app",
   splashImageUrl: `${APP_URL}/splash.png`,
   splashBackgroundColor: "#0d5cff",
+  webhookUrl: `${APP_URL}/api/webhook`,
   subtitle: APP_SUBTITLE,
   description: APP_DESCRIPTION,
   screenshotUrls: [
@@ -40,7 +43,12 @@ export const APP_MANIFEST = {
   ogDescription: "Turn any Base transaction hash into a crisp, saved-and-shared receipt card.",
   ogImageUrl: `${APP_URL}/og-image.png`,
   requiredChains: ["eip155:8453"],
-  requiredCapabilities: [],
+  requiredCapabilities: [
+    "actions.ready",
+    "wallet.getEthereumProvider",
+    "actions.composeCast"
+  ],
+  castShareUrl: `${APP_URL}/share/cast`,
   noindex: false,
   canonicalDomain: CANONICAL_DOMAIN
 } as const;
