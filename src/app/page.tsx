@@ -243,8 +243,10 @@ export default function HomePage() {
 
             {isConnected ? (
               <div className={styles.connectedState}>
-                <span>{address}</span>
-                <span>{chainId === base.id ? "Base network" : "Unsupported network"}</span>
+                <span className={styles.connectedAddress}>{address}</span>
+                <span className={styles.connectedNetwork}>
+                  {chainId === base.id ? "Base network" : "Unsupported network"}
+                </span>
               </div>
             ) : (
               <div className={styles.walletButtons}>

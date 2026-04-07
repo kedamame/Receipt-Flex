@@ -319,6 +319,17 @@
   background: rgba(13, 92, 255, 0.08);
 }
 
+.connectedAddress {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.connectedNetwork {
+  line-height: 1.35;
+}
+
 .previewColumn {
   display: grid;
   gap: 1rem;
