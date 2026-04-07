@@ -342,7 +342,10 @@ export default function HomePage() {
                 Share
               </button>
             </div>
-            <p className={styles.helperText}>Deep link preview: {parsed?.hash || sampleHint}</p>
+            <p className={styles.previewLinkText}>
+              <span>Deep link preview:</span>
+              <span className={styles.previewHash}>{parsed?.hash || sampleHint}</span>
+            </p>
           </div>
         </div>
 
