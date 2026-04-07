@@ -158,6 +158,20 @@ export default function HomePage() {
 
     const text = `${parsed.label} on Base\n${parsed.summary}\n${shareUrl}`;
 
+    if (isInMiniApp) {
+      try {
+        const { sdk } = await import("@farcaster/miniapp-sdk");
+        await sdk.actions.composeCast({
+          text,
+          embeds: [shareUrl]
+        });
+        setNotice("Opened Farcaster cast composer.");
+        return;
+      } catch {
+        // Fall through to generic browser sharing when composeCast is unavailable.
+      }
+    }
+
     if (navigator.share) {
       try {
         await navigator.share({
@@ -173,7 +187,7 @@ export default function HomePage() {
 
     if (navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(text);
-      setNotice("Share text copied to clipboard.");
+      setNotice(isInMiniApp ? "Copied share text. Paste it into Farcaster or Base App." : "Share text copied to clipboard.");
       return;
     }
 
