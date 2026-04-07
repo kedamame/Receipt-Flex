@@ -1,0 +1,49 @@
+:root {
+  --bg: #f4efe4;
+  --ink: #111111;
+  --paper: rgba(255, 251, 242, 0.82);
+  --paper-strong: rgba(255, 251, 242, 0.94);
+  --blue: #0d5cff;
+  --cyan: #3ae7ff;
+  --yellow: #ffd84d;
+  --orange: #ff8c42;
+  --shadow: rgba(17, 17, 17, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-display), sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(58, 231, 255, 0.45), transparent 32%),
+    radial-gradient(circle at 80% 15%, rgba(255, 216, 77, 0.52), transparent 24%),
+    linear-gradient(135deg, #fff8ef 0%, #f4efe4 44%, #d5ecff 100%);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: rgba(13, 92, 255, 0.18);
+}
+

@@ -1,0 +1,178 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 32rem;
+  padding: 1.35rem;
+  border-radius: 2rem;
+  box-shadow: 0 24px 70px rgba(17, 17, 17, 0.16);
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  top: 9.6rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: rgba(255, 251, 242, 0.92);
+}
+
+.card::before {
+  left: -1rem;
+}
+
+.card::after {
+  right: -1rem;
+}
+
+.velocity {
+  color: #111111;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.56), transparent 30%),
+    linear-gradient(145deg, #0d5cff 0%, #3ae7ff 52%, #ffd84d 100%);
+}
+
+.terminal {
+  color: #f7f3ea;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%),
+    linear-gradient(145deg, #111111 0%, #1b2757 48%, #0d5cff 100%);
+}
+
+.sunbeam {
+  color: #111111;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.62), transparent 28%),
+    linear-gradient(145deg, #fff8ef 0%, #ffd84d 54%, #ff8c42 100%);
+}
+
+.headerRow,
+.ticketMeta,
+.timelineRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.headerRow h2,
+.mainValue strong {
+  margin: 0;
+  letter-spacing: -0.06em;
+}
+
+.eyebrow,
+.blockLabel,
+.ticketMeta,
+.statusPill {
+  font-family: var(--font-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.eyebrow,
+.blockLabel {
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.headerRow h2 {
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  line-height: 0.95;
+}
+
+.statusPill {
+  align-self: flex-start;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.12);
+  font-size: 0.72rem;
+}
+
+.ticketMeta {
+  padding-bottom: 0.85rem;
+  border-bottom: 1px dashed rgba(17, 17, 17, 0.26);
+  font-size: 0.74rem;
+}
+
+.terminal .ticketMeta,
+.terminal .statusPill {
+  border-color: rgba(247, 243, 234, 0.24);
+  background: rgba(247, 243, 234, 0.12);
+}
+
+.mainValue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mainValue strong {
+  font-size: clamp(2.6rem, 8vw, 4.8rem);
+  line-height: 0.92;
+}
+
+.mainValue span {
+  font-size: 1rem;
+  opacity: 0.78;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.dataBlock,
+.summaryBox,
+.warningBox,
+.timelineRow > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.95rem;
+  border-radius: 1.15rem;
+  background: rgba(255, 251, 242, 0.3);
+}
+
+.terminal .dataBlock,
+.terminal .summaryBox,
+.terminal .warningBox,
+.terminal .timelineRow > div {
+  background: rgba(247, 243, 234, 0.08);
+}
+
+.dataBlock strong,
+.timelineRow strong {
+  line-height: 1.2;
+}
+
+.summaryBox p,
+.warningBox {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.warningBox {
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .card {
+    min-height: 28rem;
+    padding: 1.1rem;
+  }
+
+  .headerRow,
+  .ticketMeta,
+  .timelineRow {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
